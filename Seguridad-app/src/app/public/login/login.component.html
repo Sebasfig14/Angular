@@ -1,0 +1,32 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onLogin()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Iniciar Sesion</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="user" formControlName="nombre">
+
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="password" type = "password" formControlName="password">
+
+          </mat-form-field>
+        </div>
+      </div>
+
+
+
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Iniciar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

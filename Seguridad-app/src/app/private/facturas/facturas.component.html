@@ -1,0 +1,112 @@
+<!--<div class ="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>Facturas</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      Cliente:{{cliente.nombre}}
+    </div>
+    <div class="col-sm-6">
+      Direccion:{{cliente.direccion}}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      Nit:{{cliente.nit}}
+    </div>
+
+  </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Empleado</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Total</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Detalle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of facturas">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.empleado}}</td>
+      <td>{{item.creado}}</td>
+      <td>{{item.total}}</td>
+      <td>{{item.estado}}</td>
+      <td><button type="button" (click)="Oncapturar(item)" class="btn btn-success btn-block">Detalle</button></td>
+    </tr>
+
+  </tbody>
+</table>
+</div>-->
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h1>FACTURAS</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h1>Facturas</h1>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    Cliente:{{cliente.nombre}}
+  </div>
+  <div class="col-sm-6">
+    Direccion:{{cliente.direccion}}
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    Nit:{{cliente.nit}}
+  </div>
+</div>
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="facturas"
+    matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="empleado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Empleado</th>
+      <td mat-cell *matCellDef="let row">{{row.empleado}}</td>
+    </ng-container>
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+      <td mat-cell *matCellDef="let row">{{row.fecha}}</td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Total</th>
+      <td mat-cell *matCellDef="let row">{{row.total}}</td>
+    </ng-container>
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+      <td mat-cell *matCellDef="let row">{{row.estado}}</td>
+    </ng-container>
+    <ng-container matColumnDef="detalle">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Detalle</th>
+      <td mat-cell *matCellDef="let row"><button type="button" (click)="Oncapturar(row)" class="btn btn-success btn-block">Detalle</button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+</div>
+
+
+
+
